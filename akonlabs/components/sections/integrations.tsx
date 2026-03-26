@@ -50,10 +50,10 @@ export function Integrations() {
     <section id="integrations" className="py-12 md:py-16">
       <div className="container mx-auto max-w-7xl px-4">
         <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             Supported Editors
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
             Works with your favorite AI-powered code editors.
           </p>
         </AnimatedSection>

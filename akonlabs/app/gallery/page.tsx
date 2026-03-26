@@ -26,21 +26,21 @@ export default async function GalleryPage() {
 
   return (
     <div className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="mx-auto max-w-3xl text-center mb-10">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
           <Badge variant="secondary" className="mb-4">
             Gallery
           </Badge>
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl mb-4">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4">
             GitNexus in action
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             Screenshots from real codebases and developer workflows.
           </p>
         </div>
 
         {images.length > 0 ? (
-          <div className="columns-1 md:columns-2 gap-6 space-y-6">
+          <div className="columns-1 md:columns-2 gap-4 sm:gap-6 space-y-4 sm:space-y-6">
             {images.map((image, index) => (
               <Card
                 key={image}

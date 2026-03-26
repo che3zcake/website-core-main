@@ -117,14 +117,14 @@ export default async function OpenSourcePage() {
 
   return (
     <div className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
         {/* Header */}
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+        <AnimatedSection className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
           <Badge variant="secondary" className="mb-4 gap-1.5">
             <GitFork className="size-3" />
             Open Source
           </Badge>
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl mb-3">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-3">
             Built in the open
           </h1>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-lg mx-auto mb-6">
@@ -144,16 +144,16 @@ export default async function OpenSourcePage() {
         </AnimatedSection>
 
         {/* Live stats */}
-        <AnimatedSection delay={100} className="mb-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <AnimatedSection delay={100} className="mb-8 sm:mb-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
             {statCards.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl border border-white/[0.06] bg-card/30 p-4 text-center transition-all duration-200 hover:bg-card/50"
+                className="rounded-xl border border-white/[0.06] bg-card/30 p-3 sm:p-4 text-center transition-all duration-200 hover:bg-card/50"
               >
-                <stat.icon className="size-5 text-primary mx-auto mb-2" />
-                <p className="text-2xl font-bold tabular-nums">{stat.value}</p>
-                <p className="text-sm font-medium mt-0.5">{stat.label}</p>
+                <stat.icon className="size-4 sm:size-5 text-primary mx-auto mb-1.5 sm:mb-2" />
+                <p className="text-xl sm:text-2xl font-bold tabular-nums">{stat.value}</p>
+                <p className="text-xs sm:text-sm font-medium mt-0.5">{stat.label}</p>
                 <p className="text-[10px] text-muted-foreground/60 mt-1">Live from GitHub</p>
               </div>
             ))}
@@ -181,7 +181,7 @@ export default async function OpenSourcePage() {
         )}
 
         {/* Two-column: Recent PRs + Contributors */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* Recent PRs */}
           <AnimatedSection delay={150} className="lg:col-span-2">
             <div className="rounded-xl border border-white/[0.06] bg-card/20 overflow-hidden">
@@ -205,14 +205,14 @@ export default async function OpenSourcePage() {
                         href={`https://github.com/abhigyanpatwari/GitNexus/pull/${pr.number}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-start gap-3 px-5 py-3.5 transition-colors duration-150 hover:bg-white/[0.02] group"
+                        className="flex items-start gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-3 sm:py-3.5 transition-colors duration-150 hover:bg-white/[0.02] group"
                       >
                         <StatusIcon
                           className={`size-4 shrink-0 mt-0.5 ${prStatusColor[pr.status]}`}
                         />
                         <div className="min-w-0 flex-1">
                           <div className="flex items-start justify-between gap-3">
-                            <p className="text-sm font-medium leading-snug group-hover:text-primary transition-colors">
+                            <p className="text-xs sm:text-sm font-medium leading-snug group-hover:text-primary transition-colors">
                               {pr.title}
                             </p>
                             <span className="text-xs text-muted-foreground shrink-0 mt-0.5 tabular-nums">
@@ -329,12 +329,12 @@ export default async function OpenSourcePage() {
         {/* Roadmap */}
         <AnimatedSection delay={250}>
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 sm:mb-6">
               <div className="flex items-center gap-2">
                 <Rocket className="size-4 text-primary" />
-                <h2 className="text-lg font-semibold">Roadmap</h2>
+                <h2 className="text-base sm:text-lg font-semibold">Roadmap</h2>
               </div>
-              <div className="flex items-center gap-4 text-xs text-muted-foreground">
+              <div className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-muted-foreground">
                 <div className="flex items-center gap-1.5">
                   <CheckCircle className="size-3 text-primary" />
                   Shipped
@@ -354,7 +354,7 @@ export default async function OpenSourcePage() {
               {roadmap.map((item, index) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-4 rounded-xl border border-white/[0.06] bg-card/20 p-4 transition-all duration-200 hover:bg-card/40"
+                  className="flex items-start gap-3 sm:gap-4 rounded-xl border border-white/[0.06] bg-card/20 p-3 sm:p-4 transition-all duration-200 hover:bg-card/40"
                 >
                   <div className="flex flex-col items-center shrink-0 pt-0.5">
                     <item.icon className={`size-4 ${statusColors[item.status]}`} />
@@ -383,14 +383,14 @@ export default async function OpenSourcePage() {
         </AnimatedSection>
 
         {/* Contribute CTA */}
-        <AnimatedSection delay={300} className="mt-12">
-          <div className="rounded-xl border border-primary/15 bg-primary/[0.04] p-6 max-w-2xl mx-auto text-center">
+        <AnimatedSection delay={300} className="mt-8 sm:mt-12">
+          <div className="rounded-xl border border-primary/15 bg-primary/[0.04] p-4 sm:p-6 max-w-2xl mx-auto text-center">
             <h3 className="text-base font-semibold mb-2">Want to contribute?</h3>
             <p className="text-sm text-muted-foreground mb-4">
               We welcome PRs of all sizes. Check out our good first issues or jump into
               the Discord.
             </p>
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
               <Button size="sm" className="gap-2" asChild>
                 <a
                   href="https://github.com/abhigyanpatwari/GitNexus/issues?q=is%3Aopen+label%3A%22good+first+issue%22"

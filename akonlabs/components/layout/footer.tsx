@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t border-white/[0.06] bg-card/20">
       {/* Top CTA strip */}
-      <div className="container mx-auto max-w-7xl px-4 py-12">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6 py-10 sm:py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12 pb-12 border-b border-white/[0.06]">
           <div className="flex items-center gap-3">
             <Image
@@ -32,7 +32,7 @@ export function Footer() {
           </Button>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4">
           <div className="space-y-3">
             <h4 className="text-sm font-semibold">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">

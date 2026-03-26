@@ -42,17 +42,17 @@ export function HowItWorks() {
           <Badge variant="secondary" className="mb-4">
             6-Step Pipeline
           </Badge>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             How It Works
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
             From source code to queryable knowledge graph in 6 steps.
           </p>
         </AnimatedSection>
 
         {/* Pipeline steps with connectors */}
         <div className="mb-10">
-          <div className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-2 sm:gap-3 grid-cols-3 sm:grid-cols-3 lg:grid-cols-6">
             {steps.map((step, index) => (
               <AnimatedSection
                 key={step.number}

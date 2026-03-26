@@ -30,10 +30,10 @@ export function McpTools() {
           <Badge variant="secondary" className="mb-4">
             7 MCP Tools
           </Badge>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             What AI Agents Get
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
             Powerful tools that give your AI assistant deep codebase understanding.
           </p>
         </AnimatedSection>
@@ -56,16 +56,16 @@ export function McpTools() {
               {tools.map((tool, index) => (
                 <div
                   key={tool.name}
-                  className="flex items-start gap-4 px-5 py-4 transition-colors duration-150 hover:bg-white/[0.03]"
+                  className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 px-4 sm:px-5 py-3 sm:py-4 transition-colors duration-150 hover:bg-white/[0.03]"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <div className="flex items-center gap-2 shrink-0 pt-0.5">
+                  <div className="flex items-center gap-2 shrink-0">
                     <tool.icon className="size-4 text-primary/70" />
-                    <span className="font-mono text-sm text-primary font-medium min-w-[130px]">
+                    <span className="font-mono text-sm text-primary font-medium">
                       {tool.name}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pl-6 sm:pl-0">
                     {tool.description}
                   </p>
                 </div>

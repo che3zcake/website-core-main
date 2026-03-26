@@ -155,35 +155,35 @@ const stats = [
 export default function TestimonialsPage() {
   return (
     <div className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-4">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
+        <AnimatedSection className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
           <Badge variant="secondary" className="mb-4">
             Community Love
           </Badge>
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl mb-4">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4">
             Developers are{" "}
             <span className="text-primary">building with GitNexus</span>
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             Real feedback from developers, blogs, and the open-source community.
           </p>
         </AnimatedSection>
 
         {/* Stats bar */}
         <AnimatedSection className="mb-10">
-          <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <Card
                 key={stat.label}
                 className="bg-card/50 backdrop-blur text-center border-primary/20"
               >
-                <CardContent className="pt-6">
-                  <stat.icon className="size-5 text-primary mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-primary">
+                <CardContent className="p-4 sm:pt-6">
+                  <stat.icon className="size-4 sm:size-5 text-primary mx-auto mb-1.5 sm:mb-2" />
+                  <p className="text-xl sm:text-2xl font-bold text-primary">
                     {stat.value}
                   </p>
-                  <p className="text-sm font-medium">{stat.label}</p>
-                  <p className="text-xs text-muted-foreground mt-1">
+                  <p className="text-xs sm:text-sm font-medium">{stat.label}</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
                     {stat.sublabel}
                   </p>
                 </CardContent>
@@ -193,7 +193,7 @@ export default function TestimonialsPage() {
         </AnimatedSection>
 
         {/* Testimonial cards */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection
               key={`${testimonial.name}-${index}`}
@@ -202,8 +202,8 @@ export default function TestimonialsPage() {
             >
               <Card className="h-full bg-card/50 backdrop-blur hover-lift group relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/60 via-primary to-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <CardContent className="pt-6 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-4">
+                <CardContent className="p-4 sm:pt-6 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
                     <div className="flex items-center gap-2">
                       <Quote className="size-5 text-primary/40" />
                       <Badge
@@ -218,7 +218,7 @@ export default function TestimonialsPage() {
                     </Badge>
                   </div>
 
-                  <blockquote className="text-sm leading-relaxed text-foreground/90 mb-6 flex-1">
+                  <blockquote className="text-xs sm:text-sm leading-relaxed text-foreground/90 mb-4 sm:mb-6 flex-1">
                     &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
 
@@ -251,7 +251,7 @@ export default function TestimonialsPage() {
           ))}
         </div>
 
-        <AnimatedSection delay={600} className="mt-16 text-center">
+        <AnimatedSection delay={600} className="mt-10 sm:mt-16 text-center">
           <p className="text-sm text-muted-foreground">
             See the images on the{" "}
             <a

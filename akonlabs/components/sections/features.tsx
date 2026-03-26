@@ -11,6 +11,8 @@ import {
   Globe,
 } from "lucide-react"
 import { AnimatedSection } from "@/components/ui/animated-section"
+import { motion, useInView } from "motion/react"
+import { useRef } from "react"
 import { cn } from "@/lib/utils"
 
 const features = [
@@ -19,7 +21,7 @@ const features = [
     title: "Knowledge Graph",
     description:
       "Maps every function, class, import, and call chain. AI agents understand the full codebase, not just open files.",
-    className: "md:col-span-2 md:row-span-2",
+    className: "col-span-2 md:row-span-2",
     featured: true,
   },
   {
@@ -57,7 +59,7 @@ const features = [
     title: "Wiki Generation",
     description:
       "LLM-powered docs auto-generated from the graph. Always up-to-date architecture documentation.",
-    className: "md:col-span-2",
+    className: "col-span-2 md:col-span-2",
     featured: false,
   },
   {
@@ -78,32 +80,40 @@ const features = [
 ]
 
 export function Features() {
+  const gridRef = useRef(null)
+  const isInView = useInView(gridRef, { once: true, margin: "-50px" })
+
   return (
     <section id="features" className="py-16 md:py-20 relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/[0.015] to-transparent" />
 
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
         <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             Key Features
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
             Everything you need to give your AI coding assistant full codebase
             awareness.
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-3 md:grid-cols-4 auto-rows-[minmax(140px,auto)]">
+        <div ref={gridRef} className="grid grid-cols-2 gap-3 md:grid-cols-4 auto-rows-[minmax(120px,auto)] sm:auto-rows-[minmax(140px,auto)]">
           {features.map((feature, index) => (
-            <AnimatedSection
+            <motion.div
               key={feature.title}
-              delay={Math.min(index * 50, 350)}
-              direction="up"
+              initial={{ opacity: 0, y: 20, scale: 0.97 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className={feature.className}
             >
               <div
                 className={cn(
-                  "card-hover group relative h-full overflow-hidden rounded-xl border p-6 transition-all duration-200",
+                  "card-hover group relative h-full overflow-hidden rounded-xl border p-4 sm:p-6 transition-all duration-200",
                   feature.featured
                     ? "border-primary/20 bg-primary/[0.06] hover:border-primary/40"
                     : "border-white/[0.06] bg-card/40 hover:border-white/[0.12] hover:bg-card/60",
@@ -114,20 +124,20 @@ export function Features() {
                   <div
                     className={cn(
                       "mb-4 flex items-center justify-center rounded-xl bg-primary/10 transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-105",
-                      feature.featured ? "size-14" : "size-11"
+                      feature.featured ? "size-11 sm:size-14" : "size-9 sm:size-11"
                     )}
                   >
                     <feature.icon
                       className={cn(
                         "text-primary",
-                        feature.featured ? "size-7" : "size-5"
+                        feature.featured ? "size-5 sm:size-7" : "size-4 sm:size-5"
                       )}
                     />
                   </div>
                   <h3
                     className={cn(
                       "font-semibold mb-2",
-                      feature.featured ? "text-xl" : "text-base"
+                      feature.featured ? "text-base sm:text-xl" : "text-sm sm:text-base"
                     )}
                   >
                     {feature.title}
@@ -144,7 +154,7 @@ export function Features() {
 
                 {/* Featured card — terminal code block */}
                 {feature.featured && (
-                  <div className="relative z-10 mt-6 rounded-lg border border-white/[0.06] bg-background/50 p-4 font-mono text-xs">
+                  <div className="relative z-10 mt-4 sm:mt-6 rounded-lg border border-white/[0.06] bg-background/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs overflow-x-auto">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-primary">$</span>
                       <span className="text-foreground/80">gitnexus context --name UserService</span>
@@ -157,7 +167,7 @@ export function Features() {
                   </div>
                 )}
               </div>
-            </AnimatedSection>
+            </motion.div>
           ))}
         </div>
       </div>

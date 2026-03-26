@@ -25,14 +25,14 @@ const Circle = forwardRef<
       <div
         ref={ref}
         className={cn(
-          "z-10 flex size-12 items-center justify-center rounded-full border border-white/[0.08] bg-card p-3",
+          "z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-white/[0.08] bg-card p-2 sm:p-3",
           className
         )}
       >
         {children}
       </div>
       {label && (
-        <span className="text-xs text-muted-foreground font-medium">
+        <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
           {label}
         </span>
       )}
@@ -53,7 +53,7 @@ function GitNexusBeamDiagram() {
 
   return (
     <div
-      className="relative flex h-[280px] w-full items-center justify-center overflow-hidden rounded-xl border border-white/[0.06] bg-card/20 dot-grid p-8"
+      className="relative flex h-[220px] sm:h-[280px] w-full items-center justify-center overflow-hidden rounded-xl border border-white/[0.06] bg-card/20 dot-grid p-4 sm:p-8"
       ref={containerRef}
     >
       <div className="flex size-full max-w-lg items-stretch justify-between">
@@ -69,7 +69,7 @@ function GitNexusBeamDiagram() {
           </Circle>
         </div>
         <div className="flex items-center justify-center">
-          <Circle ref={centerRef} className="size-14 border-primary/30 bg-primary/10" label="GitNexus">
+          <Circle ref={centerRef} className="size-12 sm:size-14 border-primary/30 bg-primary/10" label="GitNexus">
             <Network className="size-6 text-primary" />
           </Circle>
         </div>
@@ -116,7 +116,7 @@ export function ProblemSolution() {
     <section className="py-16 md:py-20">
       <div className="container mx-auto max-w-7xl px-4">
         <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl mb-3">
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-4xl mb-3">
             AI coding tools are powerful.{" "}
             <span className="text-muted-foreground">But they&apos;re flying blind.</span>
           </h2>
@@ -166,7 +166,7 @@ export function ProblemSolution() {
 
           {/* Bottom row — impact stat + value props, same grid width */}
           <AnimatedSection delay={300}>
-            <div className="grid md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {/* Impact stat — spans 1 col */}
               <div className="rounded-xl border border-primary/15 bg-primary/[0.04] p-4 flex flex-col items-center justify-center text-center">
                 <span className="text-2xl font-bold text-primary">100%</span>

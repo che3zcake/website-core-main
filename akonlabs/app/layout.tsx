@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { SmoothScroll } from "@/components/smooth-scroll"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -33,6 +34,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-background">
         <ThemeProvider>
+          <SmoothScroll />
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm">
             Skip to main content
           </a>
