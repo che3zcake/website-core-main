@@ -32,15 +32,17 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-screen bg-background">
+      <body className="min-h-screen bg-background overflow-x-hidden">
         <ThemeProvider>
           <SmoothScroll />
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm">
             Skip to main content
           </a>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
+          <div className="mx-auto max-w-[1200px] border-x border-primary/20">
+            <Header />
+            <main id="main-content">{children}</main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

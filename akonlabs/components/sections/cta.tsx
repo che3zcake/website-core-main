@@ -28,8 +28,8 @@ export function CTA() {
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-[80%] h-[50%] rounded-full bg-[radial-gradient(ellipse,oklch(0.696_0.17_162.48/0.10),transparent_60%)]" />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="px-10 sm:px-12">
+        <div className="mx-auto max-w-[640px] text-center">
           <AnimatedSection>
             <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl lg:text-5xl mb-4">
               Ready to give your AI agent{" "}
@@ -44,7 +44,7 @@ export function CTA() {
           </AnimatedSection>
 
           <AnimatedSection delay={150}>
-            <div className="relative rounded-xl border border-white/[0.08] bg-[oklch(0.08_0.008_166)] p-5 mb-8 max-w-xl mx-auto text-left">
+            <div className="relative rounded-md border border-white/[0.04] bg-[oklch(0.06_0.004_166)] p-5 mb-8 mx-auto text-left">
               <button
                 onClick={copyCommand}
                 className="absolute top-3 right-3 p-1.5 rounded-md text-muted-foreground/50 hover:text-muted-foreground hover:bg-white/[0.06] transition-colors duration-150"

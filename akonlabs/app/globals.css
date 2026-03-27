@@ -28,7 +28,7 @@
     --chart-3: oklch(0.845 0.143 164.978);
     --chart-4: oklch(0.596 0.145 163.225);
     --chart-5: oklch(0.508 0.118 165.612);
-    --radius: 0.625rem;
+    --radius: 0.375rem;
     --sidebar: oklch(0.979 0.021 166.113);
     --sidebar-foreground: oklch(0.145 0 0);
     --sidebar-primary: oklch(0.596 0.145 163.225);
@@ -40,23 +40,23 @@
 }
 
 .dark {
-    --background: oklch(0.10 0.012 166);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.14 0.016 166);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.14 0.016 166);
-    --popover-foreground: oklch(0.985 0 0);
+    --background: oklch(0.08 0.005 166);
+    --foreground: oklch(0.93 0 0);
+    --card: oklch(0.11 0.008 166);
+    --card-foreground: oklch(0.93 0 0);
+    --popover: oklch(0.11 0.008 166);
+    --popover-foreground: oklch(0.93 0 0);
     --primary: oklch(0.696 0.17 162.48);
     --primary-foreground: oklch(0.262 0.051 172.552);
-    --secondary: oklch(0.20 0.025 166);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.18 0.018 166);
-    --muted-foreground: oklch(0.72 0.05 166);
-    --accent: oklch(0.18 0.018 166);
-    --accent-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.16 0.012 166);
+    --secondary-foreground: oklch(0.93 0 0);
+    --muted: oklch(0.14 0.010 166);
+    --muted-foreground: oklch(0.55 0.02 166);
+    --accent: oklch(0.14 0.010 166);
+    --accent-foreground: oklch(0.93 0 0);
     --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 6%);
-    --input: oklch(1 0 0 / 8%);
+    --border: oklch(1 0 0 / 4%);
+    --input: oklch(1 0 0 / 6%);
     --ring: oklch(0.696 0.17 162.48);
     --chart-1: oklch(0.696 0.17 162.48);
     --chart-2: oklch(0.765 0.177 163.223);
@@ -216,25 +216,13 @@ body::after {
   box-shadow: 0 0 30px oklch(0.696 0.17 162.48 / 0.2);
 }
 
-/* ── Card hover border glow ── */
+/* ── Card hover ── */
 .card-hover {
   position: relative;
-  transition: border-color 0.2s ease-out;
+  transition: transform 0.2s ease-out, border-color 0.2s ease-out, background-color 0.2s ease-out;
 }
-.card-hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, oklch(0.696 0.17 162.48 / 0.6), transparent);
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-}
-.card-hover:hover::before {
-  opacity: 1;
+.card-hover:hover {
+  transform: scale(1.02);
 }
 
 /* ── Spotlight animation ── */

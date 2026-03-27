@@ -25,8 +25,8 @@ const tools = [
 export function McpTools() {
   return (
     <section className="py-12 md:py-16 relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl px-4">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
           <Badge variant="secondary" className="mb-4">
             7 MCP Tools
           </Badge>
@@ -40,7 +40,7 @@ export function McpTools() {
 
         {/* Terminal-styled container */}
         <AnimatedSection delay={100}>
-          <div className="max-w-4xl mx-auto rounded-xl border border-white/[0.08] bg-[oklch(0.08_0.008_166)] overflow-hidden">
+          <div className="rounded-md border border-white/[0.04] bg-[oklch(0.06_0.004_166)] overflow-hidden">
             {/* Terminal title bar */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
               <div className="flex gap-1.5">

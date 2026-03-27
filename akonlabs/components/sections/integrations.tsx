@@ -48,8 +48,8 @@ const languages = [
 export function Integrations() {
   return (
     <section id="integrations" className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-4">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             Supported Editors
           </h2>
@@ -58,7 +58,7 @@ export function Integrations() {
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-y-3 gap-x-6 grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto">
+        <div className="grid gap-y-3 gap-x-6 grid-cols-1 sm:grid-cols-2">
           {editors.map((editor, index) => (
             <AnimatedSection
               key={editor.name}
@@ -67,10 +67,10 @@ export function Integrations() {
             >
               <div
                 className={cn(
-                  "card-hover group relative h-full overflow-hidden rounded-xl border backdrop-blur p-6 transition-all duration-200",
+                  "card-hover group relative h-full overflow-hidden rounded-md border backdrop-blur p-6 transition-all duration-200",
                   editor.highlight
-                    ? "border-primary/25 bg-primary/[0.06] hover:border-primary/40"
-                    : "border-white/[0.06] bg-card/40 hover:border-white/[0.12]"
+                    ? "border-primary/15 bg-primary/[0.03] hover:border-primary/30"
+                    : "border-white/[0.06] bg-card/20 hover:border-white/[0.12] hover:bg-card/30"
                 )}
               >
                 {editor.highlight && (

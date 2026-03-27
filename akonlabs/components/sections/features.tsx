@@ -87,8 +87,8 @@ export function Features() {
     <section id="features" className="py-16 md:py-20 relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/[0.015] to-transparent" />
 
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
             Key Features
           </h2>
@@ -113,17 +113,17 @@ export function Features() {
             >
               <div
                 className={cn(
-                  "card-hover group relative h-full overflow-hidden rounded-xl border p-4 sm:p-6 transition-all duration-200",
+                  "card-hover group relative h-full overflow-hidden rounded-md border p-4 sm:p-6 transition-all duration-200",
                   feature.featured
-                    ? "border-primary/20 bg-primary/[0.06] hover:border-primary/40"
-                    : "border-white/[0.06] bg-card/40 hover:border-white/[0.12] hover:bg-card/60",
+                    ? "border-primary/15 bg-primary/[0.04] hover:border-primary/30"
+                    : "border-white/[0.06] bg-card/20 hover:border-white/[0.12] hover:bg-card/40",
                   feature.featured && "flex flex-col justify-between"
                 )}
               >
                 <div className="relative z-10">
                   <div
                     className={cn(
-                      "mb-4 flex items-center justify-center rounded-xl bg-primary/10 transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-105",
+                      "mb-4 flex items-center justify-center rounded-md bg-primary/10 transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-105",
                       feature.featured ? "size-11 sm:size-14" : "size-9 sm:size-11"
                     )}
                   >

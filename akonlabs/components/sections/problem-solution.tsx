@@ -53,7 +53,7 @@ function GitNexusBeamDiagram() {
 
   return (
     <div
-      className="relative flex h-[220px] sm:h-[280px] w-full items-center justify-center overflow-hidden rounded-xl border border-white/[0.06] bg-card/20 dot-grid p-4 sm:p-8"
+      className="relative flex h-[220px] sm:h-[280px] w-full items-center justify-center overflow-hidden rounded-md border border-white/[0.06] bg-card/20 dot-grid p-4 sm:p-8"
       ref={containerRef}
     >
       <div className="flex size-full max-w-lg items-stretch justify-between">
@@ -114,8 +114,8 @@ const comparisons = [
 export function ProblemSolution() {
   return (
     <section className="py-16 md:py-20">
-      <div className="container mx-auto max-w-7xl px-4">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
           <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-4xl mb-3">
             AI coding tools are powerful.{" "}
             <span className="text-muted-foreground">But they&apos;re flying blind.</span>
@@ -127,7 +127,7 @@ export function ProblemSolution() {
         </AnimatedSection>
 
         {/* Beam diagram — full width, centered */}
-        <AnimatedSection delay={100} className="max-w-5xl mx-auto mb-8">
+        <AnimatedSection delay={100} className="mx-auto mb-8">
           <GitNexusBeamDiagram />
           <p className="text-center text-xs text-muted-foreground/60 mt-2">
             Code → Knowledge Graph → AI Editors
@@ -135,13 +135,13 @@ export function ProblemSolution() {
         </AnimatedSection>
 
         {/* Comparison rows — centered, consistent width */}
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto">
           <AnimatedSection delay={200}>
             <div className="grid md:grid-cols-3 gap-3 mb-3">
               {comparisons.map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-xl border border-white/[0.06] bg-card/30 p-4 transition-all duration-200 hover:bg-card/50"
+                  className="rounded-md border border-white/[0.06] bg-card/20 p-4 transition-all duration-200 hover:border-white/[0.12] hover:bg-card/40"
                 >
                   <div className="flex items-start gap-2.5 mb-3">
                     <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-destructive/10 mt-0.5">
@@ -168,7 +168,7 @@ export function ProblemSolution() {
           <AnimatedSection delay={300}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {/* Impact stat — spans 1 col */}
-              <div className="rounded-xl border border-primary/15 bg-primary/[0.04] p-4 flex flex-col items-center justify-center text-center">
+              <div className="rounded-md border border-primary/15 bg-primary/[0.04] p-4 flex flex-col items-center justify-center text-center">
                 <span className="text-2xl font-bold text-primary">100%</span>
                 <p className="text-xs text-primary/70 font-medium">blast radius known</p>
               </div>
@@ -181,7 +181,7 @@ export function ProblemSolution() {
               ].map((item) => (
                 <div
                   key={item.unit}
-                  className="rounded-xl border border-white/[0.06] bg-card/20 p-4 text-center flex flex-col justify-center"
+                  className="rounded-md border border-white/[0.06] bg-card/20 p-4 text-center flex flex-col justify-center hover:border-white/[0.12]"
                 >
                   <div className="flex items-baseline justify-center gap-1 mb-0.5">
                     <span className="text-lg font-bold text-foreground">{item.stat}</span>

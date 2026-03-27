@@ -1,13 +1,12 @@
 "use client"
 
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Spotlight } from "@/components/ui/spotlight"
 import { FloatingParticles } from "@/components/ui/floating-particles"
 import { TextReveal } from "@/components/ui/text-reveal"
 import { ArrowRight, Play, Pause, Copy, Check } from "lucide-react"
-import { useEffect, useState, useRef, useCallback } from "react"
+import { useState, useRef, useCallback } from "react"
 import { motion } from "motion/react"
 
 export function Hero() {
@@ -34,17 +33,23 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden py-12 md:py-20">
-      {/* Background layers */}
-      <Image
-        src="/assets/cover.jpeg"
-        alt=""
-        fill
-        className="object-cover -z-30"
-        priority
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-background/90 via-background/85 to-background" />
+    <section className="relative py-12 md:py-20">
+      {/* Background video — breaks out of the 1200px layout container */}
+      <div className="absolute top-0 -z-30 h-full w-[100vw] left-[50%] -translate-x-[50%] overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="/assets/akonlab_loop_bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* The translucent box matching only the 1200px width */}
+      <div className="absolute inset-0 -z-20 bg-background/50 backdrop-blur-xl" />
 
       {/* Spotlight effect */}
       <Spotlight
@@ -57,8 +62,8 @@ export function Hero() {
         <FloatingParticles count={30} />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
-        <div className="mx-auto max-w-4xl text-center">
+      <div className="relative z-10 px-10 sm:px-12">
+        <div className="mx-auto max-w-[640px] text-center">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +79,7 @@ export function Hero() {
             </Badge>
           </motion.div>
 
-          {/* Heading with text reveal */}
+          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +115,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <Button size="lg" className="gap-2 hover-lift hover:shadow-[0_0_30px_oklch(0.696_0.17_162.48/0.4)] transition-shadow duration-300 text-sm sm:text-base px-6 w-full sm:w-auto" asChild>
+            <Button size="lg" className="gap-2 rounded hover-lift hover:shadow-[0_0_30px_oklch(0.696_0.17_162.48/0.4)] transition-shadow duration-300 text-sm sm:text-base px-6 w-full sm:w-auto" asChild>
               <a href="https://app.akonlabs.com">
                 Get Started
                 <ArrowRight className="size-4" />
@@ -119,7 +124,7 @@ export function Hero() {
 
             <button
               onClick={copyCommand}
-              className="group flex items-center justify-center gap-3 rounded-lg border border-white/[0.08] bg-card/80 px-5 py-2.5 font-mono text-xs sm:text-sm transition-all duration-200 hover:border-primary/30 hover:bg-card active:scale-[0.98] w-full sm:w-auto"
+              className="group flex items-center justify-center gap-3 rounded border border-white/[0.08] bg-card/80 px-5 py-2.5 font-mono text-xs sm:text-sm transition-all duration-200 hover:border-primary/30 hover:bg-card active:scale-[0.98] w-full sm:w-auto"
             >
               <span className="text-primary">$</span>
               <span className="text-muted-foreground">npx gitnexus analyze</span>
@@ -137,10 +142,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 40, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 sm:mt-12 mx-auto max-w-5xl"
+          className="mt-8 sm:mt-12 mx-auto"
         >
-          <div className="rounded-2xl border border-white/[0.08] bg-card/30 p-1.5 backdrop-blur-sm glow-sm">
-            <div className="overflow-hidden rounded-xl relative group">
+          <div className="rounded-lg border border-white/[0.08] bg-card/30 p-1.5 backdrop-blur-sm glow-sm">
+            <div className="overflow-hidden rounded-md relative">
               <video
                 ref={(el) => {
                   (videoRef as React.MutableRefObject<HTMLVideoElement | null>).current = el
@@ -152,18 +157,22 @@ export function Hero() {
                 playsInline
                 poster="/assets/demo-poster.jpg"
                 aria-label="GitNexus demo showing codebase analysis"
-                className="w-full h-auto block"
+                className="w-full h-auto block cursor-pointer"
+                onClick={togglePlay}
               >
                 <source src="/assets/demo.mp4" type="video/mp4" />
               </video>
 
+              {/* Single play/pause button — always visible when paused, shows on hover when playing */}
               <button
                 type="button"
                 onClick={togglePlay}
                 aria-label={isPlaying ? "Pause video" : "Play video"}
-                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-200"
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${
+                  isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
+                }`}
               >
-                <div className="flex size-14 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/10 transition-transform duration-150 hover:scale-105 active:scale-95">
+                <div className="flex size-14 items-center justify-center rounded-full bg-black/50 backdrop-blur-md border border-white/15 transition-transform duration-150 hover:scale-105 active:scale-95">
                   {isPlaying ? (
                     <Pause className="size-5 text-white" />
                   ) : (
@@ -171,14 +180,6 @@ export function Hero() {
                   )}
                 </div>
               </button>
-
-              {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex size-14 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/10">
-                    <Play className="size-5 text-white ml-0.5" />
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </motion.div>

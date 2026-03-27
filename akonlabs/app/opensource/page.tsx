@@ -117,9 +117,9 @@ export default async function OpenSourcePage() {
 
   return (
     <div className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
+      <div className="px-10 sm:px-12">
         {/* Header */}
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-8 sm:mb-10">
           <Badge variant="secondary" className="mb-4 gap-1.5">
             <GitFork className="size-3" />
             Open Source
@@ -328,7 +328,7 @@ export default async function OpenSourcePage() {
 
         {/* Roadmap */}
         <AnimatedSection delay={250}>
-          <div className="max-w-4xl mx-auto">
+          <div className="mx-auto">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 sm:mb-6">
               <div className="flex items-center gap-2">
                 <Rocket className="size-4 text-primary" />

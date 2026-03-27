@@ -6,10 +6,9 @@ import { ArrowRight } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-card/20">
-      {/* Top CTA strip */}
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6 py-10 sm:py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12 pb-12 border-b border-white/[0.06]">
+    <footer className="border-t border-primary/20">
+      <div className="px-10 sm:px-12 py-10 sm:py-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-12 pb-12 border-b border-primary/20">
           <div className="flex items-center gap-3">
             <Image
               src="/assets/akonlabs_logo-removebg-preview.png"

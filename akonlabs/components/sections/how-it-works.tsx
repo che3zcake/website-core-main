@@ -37,8 +37,8 @@ export function HowItWorks() {
     <section className="py-12 md:py-16 relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
 
-      <div className="container mx-auto max-w-7xl px-4">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
           <Badge variant="secondary" className="mb-4">
             6-Step Pipeline
           </Badge>
@@ -59,7 +59,7 @@ export function HowItWorks() {
                 delay={Math.min(index * 50, 250)}
                 direction="up"
               >
-                <div className="card-hover group relative h-full overflow-hidden rounded-xl border border-white/[0.06] bg-card/40 p-4 transition-all duration-200 hover:border-white/[0.12] hover:bg-card/60">
+                <div className="card-hover group relative h-full overflow-hidden rounded-md border border-white/[0.06] bg-card/20 p-4 hover:border-white/[0.12] transition-all duration-200 hover:border-white/[0.12] hover:bg-card/60">
                   <div className="relative z-10 text-center">
                     <div className="mb-3 mx-auto flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm ring-2 ring-primary/20 ring-offset-2 ring-offset-background transition-transform duration-200 group-hover:scale-105">
                       {step.number}
@@ -88,14 +88,14 @@ export function HowItWorks() {
         </AnimatedSection>
 
         {/* Outputs */}
-        <div className="grid gap-3 grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto">
+        <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
           {outputs.map((output, index) => (
             <AnimatedSection
               key={output.title}
               delay={Math.min(350 + index * 50, 500)}
               direction="up"
             >
-              <div className="card-hover group relative h-full overflow-hidden rounded-xl border border-primary/15 bg-primary/[0.04] p-4 transition-all duration-200 hover:border-primary/30">
+              <div className="card-hover group relative h-full overflow-hidden rounded-md border border-primary/15 bg-primary/[0.04] p-4 transition-all duration-200 hover:border-primary/30">
                 <div className="relative z-10 flex items-center gap-3">
                   <output.icon className="size-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-105" />
                   <div>

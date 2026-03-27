@@ -155,8 +155,8 @@ const stats = [
 export default function TestimonialsPage() {
   return (
     <div className="py-12 md:py-16">
-      <div className="container mx-auto max-w-7xl px-5 sm:px-6">
-        <AnimatedSection className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
+      <div className="px-10 sm:px-12">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-8 sm:mb-10">
           <Badge variant="secondary" className="mb-4">
             Community Love
           </Badge>

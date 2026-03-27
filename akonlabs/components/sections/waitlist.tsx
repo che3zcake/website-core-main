@@ -39,8 +39,8 @@ export function Waitlist() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[60%] rounded-full bg-[radial-gradient(ellipse,oklch(0.696_0.17_162.48/0.06),transparent_65%)]" />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-4">
-        <div className="mx-auto max-w-xl text-center">
+      <div className="px-10 sm:px-12">
+        <div className="mx-auto max-w-[480px] text-center">
           <AnimatedSection>
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.06] px-3 py-1 mb-6">
               <span className="relative flex size-2">
@@ -62,7 +62,7 @@ export function Waitlist() {
           <AnimatedSection delay={100}>
             {status === "success" ? (
               /* Success state */
-              <div className="rounded-xl border border-primary/20 bg-primary/[0.06] p-6 transition-all duration-300">
+              <div className="rounded-md border border-primary/20 bg-primary/[0.06] p-6 transition-all duration-300">
                 <div className="flex size-10 items-center justify-center rounded-full bg-primary/15 mx-auto mb-3">
                   <Check className="size-5 text-primary" />
                 </div>
