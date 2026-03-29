@@ -94,16 +94,16 @@ function GitNexusBeamDiagram() {
         fromRef={codeRef1}
         toRef={centerRef}
         curvature={-40}
-        gradientStartColor="#7c5cbf"
-        gradientStopColor="#a78bfa"
+        gradientStartColor="#34d399"
+        gradientStopColor="#6ee7b7"
         pathColor="oklch(1 0 0 / 0.04)"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={codeRef2}
         toRef={centerRef}
-        gradientStartColor="#7c5cbf"
-        gradientStopColor="#a78bfa"
+        gradientStartColor="#34d399"
+        gradientStopColor="#6ee7b7"
         pathColor="oklch(1 0 0 / 0.04)"
       />
       <AnimatedBeam
@@ -111,8 +111,8 @@ function GitNexusBeamDiagram() {
         fromRef={codeRef3}
         toRef={centerRef}
         curvature={40}
-        gradientStartColor="#7c5cbf"
-        gradientStopColor="#a78bfa"
+        gradientStartColor="#34d399"
+        gradientStopColor="#6ee7b7"
         pathColor="oklch(1 0 0 / 0.04)"
       />
       <AnimatedBeam
@@ -120,16 +120,16 @@ function GitNexusBeamDiagram() {
         fromRef={centerRef}
         toRef={editorRef1}
         curvature={-40}
-        gradientStartColor="#a78bfa"
-        gradientStopColor="#c4b5fd"
+        gradientStartColor="#6ee7b7"
+        gradientStopColor="#a7f3d0"
         pathColor="oklch(1 0 0 / 0.04)"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={centerRef}
         toRef={editorRef2}
-        gradientStartColor="#a78bfa"
-        gradientStopColor="#c4b5fd"
+        gradientStartColor="#6ee7b7"
+        gradientStopColor="#a7f3d0"
         pathColor="oklch(1 0 0 / 0.04)"
       />
       <AnimatedBeam
@@ -137,8 +137,8 @@ function GitNexusBeamDiagram() {
         fromRef={centerRef}
         toRef={editorRef3}
         curvature={40}
-        gradientStartColor="#a78bfa"
-        gradientStopColor="#c4b5fd"
+        gradientStartColor="#6ee7b7"
+        gradientStopColor="#a7f3d0"
         pathColor="oklch(1 0 0 / 0.04)"
       />
     </div>
@@ -163,9 +163,9 @@ const comparisons = [
 export function ProblemSolution() {
   return (
     <section className="py-20 md:py-28">
-      <div className="px-6 sm:px-12 md:px-16">
+      <div className="">
         <AnimatedSection className="mx-auto mb-12 max-w-[640px] text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400/60">
             The Problem
           </p>
           <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
@@ -217,7 +217,7 @@ export function ProblemSolution() {
           <AnimatedSection delay={300}>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               <div className="gradient-border-card glow-purple flex flex-col items-center justify-center p-5 text-center transition-all duration-300">
-                <span className="text-2xl font-bold text-foreground">
+                <span className="text-2xl font-bold text-emerald-400">
                   100%
                 </span>
                 <p className="mt-1 text-xs font-medium text-muted-foreground">

@@ -1,0 +1,98 @@
+<h2>Sticky Canvas — Section States</h2>
+<p class="subtitle">As users scroll, the particle nebula morphs through these states. What should each transition look like?</p>
+
+<div class="mockup">
+  <div class="mockup-header">Scroll Journey Flow</div>
+  <div class="mockup-body" style="padding:24px;font-size:13px;line-height:1.8;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">0</div>
+        <div>
+          <strong style="color:#fff;">Hero — The Living Brain</strong><br>
+          <span style="color:#999;">Full nebula with 6 cluster annotations. Camera slowly orbits. This is what we have now.</span>
+        </div>
+      </div>
+
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,191,0.3),transparent);"></div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div>
+          <strong style="color:#fff;">Structure — File Tree Walk</strong><br>
+          <span style="color:#999;">Particles slow down and organize into vertical "file tree" columns. Camera pulls back slightly. Think: chaos → order moment.</span>
+        </div>
+      </div>
+
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,191,0.3),transparent);"></div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div>
+          <strong style="color:#fff;">Parsing — AST Extraction</strong><br>
+          <span style="color:#999;">Camera zooms in closer. Core nodes brighten dramatically — these are the "symbols" being extracted. Halo particles dim. Individual tetrahedrons become visible.</span>
+        </div>
+      </div>
+
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,191,0.3),transparent);"></div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div>
+          <strong style="color:#fff;">Resolution — Call Chains & Imports</strong><br>
+          <span style="color:#999;">Edge flow particles surge — the connections between clusters light up brightly. Like electricity flowing through the graph. Bloom increases slightly on edges.</span>
+        </div>
+      </div>
+
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,191,0.3),transparent);"></div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+        <div>
+          <strong style="color:#fff;">Clustering — Communities Form</strong><br>
+          <span style="color:#999;">Camera pulls back. Clusters tighten and separate — each community becomes distinct with its own color hue. Annotations appear labeling each cluster. The "aha" moment.</span>
+        </div>
+      </div>
+
+      <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,191,0.3),transparent);"></div>
+
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="background:#7c5cbf;color:#fff;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+        <div>
+          <strong style="color:#fff;">Query — AI Agents Search</strong><br>
+          <span style="color:#999;">A "search ripple" emanates from one node — spreading outward, highlighting a path through the graph. Shows how one query traverses the knowledge graph. Terminal overlay appears showing the MCP tool call + result.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<h3 style="margin-top:32px;">Key question: How should the text content overlay?</h3>
+<p class="subtitle">The particle canvas is sticky. Text scrolls on top. How do we handle readability?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Left-aligned text cards</h3>
+      <p>Text stays on the left (like current hero). Particle canvas shifts its center-of-gravity to the right as sections progress. Clean separation — text never fights the visuals.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Centered text with backdrop blur panels</h3>
+      <p>Each pipeline step appears as a frosted glass card in the center. The particle canvas is behind it but visible around the edges. More dramatic but text could clash with bright particles.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Alternating left/right</h3>
+      <p>Steps alternate sides — Step 1 text on left, Step 2 text on right, etc. Camera shifts to the opposite side each time. Creates a zig-zag reading flow that feels dynamic.</p>
+    </div>
+  </div>
+</div>

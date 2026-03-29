@@ -1,0 +1,68 @@
+<h2>Experiential Scroll Journey — Concept Direction</h2>
+<p class="subtitle">How should users experience the GitNexus pipeline as they scroll?</p>
+
+<p style="color:#999;margin-bottom:24px;font-size:14px;">
+Based on GitNexus's actual architecture: <strong>processStructure → processParsing → processImports → processHeritage → call-analysis → clustering (communities) → process tracing → search/query</strong>
+</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Camera Zoom Journey (Recommended)</h3>
+      <p>The particle planet IS the scroll experience. As user scrolls:</p>
+      <ul style="color:#aaa;font-size:13px;margin-top:8px;line-height:1.7;">
+        <li><strong>Hero (top):</strong> Full nebula view — "this is your codebase as a living brain"</li>
+        <li><strong>Scroll 20%:</strong> Camera zooms in, scattered particles start organizing into clusters — text overlay: "Step 1: Structure — File tree walk"</li>
+        <li><strong>Scroll 40%:</strong> Clusters solidify, individual nodes glow — "Step 2: Parsing — Tree-sitter ASTs extract every symbol"</li>
+        <li><strong>Scroll 60%:</strong> Edge flows light up between clusters — "Step 3: Resolution — Imports & call chains connect the dots"</li>
+        <li><strong>Scroll 80%:</strong> Zoom deep into one cluster, see individual bright nodes — "Step 4: Clustering — Functional communities emerge"</li>
+        <li><strong>Scroll 100%:</strong> Pull back to full view, annotations appear — "Your codebase, fully understood"</li>
+      </ul>
+      <div class="pros-cons" style="margin-top:12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Most immersive — the product IS the visualization</li><li>One continuous Three.js canvas, no section breaks</li><li>Matches the "living brain" metaphor perfectly</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Complex to implement (scroll-linked Three.js camera + particle state)</li><li>Heavy on GPU for the full scroll</li><li>Mobile might struggle</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Sticky Canvas + Section Transitions</h3>
+      <p>Particle planet stays fixed/sticky as a background. Each section triggers a state change in the particle visualization:</p>
+      <ul style="color:#aaa;font-size:13px;margin-top:8px;line-height:1.7;">
+        <li><strong>Hero:</strong> Full nebula (current state)</li>
+        <li><strong>Section 1:</strong> Particles scatter into a file tree pattern</li>
+        <li><strong>Section 2:</strong> Particles reform into AST-like branching structures</li>
+        <li><strong>Section 3:</strong> Edge flows animate between reformed clusters</li>
+        <li><strong>Section 4:</strong> Community clusters pulse and label themselves</li>
+        <li><strong>Section 5:</strong> Search ripple — one query lights up a path through the graph</li>
+      </ul>
+      <div class="pros-cons" style="margin-top:12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Easier to implement — sections are discrete states</li><li>Text content scrolls normally over sticky canvas</li><li>Can gracefully degrade on mobile (static image fallback)</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Less cinematic than continuous zoom</li><li>State transitions need to be smooth</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid: Cinematic Hero + Illustrated Sections</h3>
+      <p>Keep the particle planet only in the hero (current). Below it, each pipeline step gets its own mini-visualization:</p>
+      <ul style="color:#aaa;font-size:13px;margin-top:8px;line-height:1.7;">
+        <li><strong>Hero:</strong> Full particle nebula with annotations (as-is)</li>
+        <li><strong>Step 1:</strong> Animated file tree expanding (CSS/SVG animation)</li>
+        <li><strong>Step 2:</strong> Code block morphing into AST nodes (motion library)</li>
+        <li><strong>Step 3:</strong> Animated beam diagram showing imports resolving</li>
+        <li><strong>Step 4:</strong> Cluster visualization (simplified 2D version of the nebula)</li>
+        <li><strong>Step 5:</strong> Terminal showing live query → result animation</li>
+      </ul>
+      <div class="pros-cons" style="margin-top:12px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Each section is independently polished</li><li>Lightest on performance</li><li>Easiest to build incrementally</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Least immersive — no continuous visual thread</li><li>Doesn't leverage the particle planet beyond hero</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>

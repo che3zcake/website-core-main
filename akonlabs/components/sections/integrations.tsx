@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Terminal, Code2, Wind, Braces, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Icon } from "@/components/ui/evervault-card"
 
 const editors = [
   {
@@ -48,7 +49,7 @@ const languages = [
 export function Integrations() {
   return (
     <section id="integrations" className="py-20 md:py-28">
-      <div className="px-6 sm:px-12 md:px-16">
+      <div className="">
         <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-3">Integrations</p>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
@@ -70,16 +71,22 @@ export function Integrations() {
                 className={cn(
                   "group relative h-full overflow-hidden p-6 transition-all duration-300",
                   editor.highlight
-                    ? "gradient-border-card featured-card"
+                    ? "corner-card border-white/[0.2]"
                     : "glass-card"
                 )}
               >
                 {editor.highlight && (
-                  <div className="absolute -top-px left-0 right-0 flex justify-center">
-                    <Badge variant="default" className="text-[10px] px-2.5 py-0.5 rounded-t-none rounded-b-md">
-                      Recommended
-                    </Badge>
-                  </div>
+                  <>
+                    <Icon className="absolute size-6 -top-3 -left-3 text-white/60" />
+                    <Icon className="absolute size-6 -top-3 -right-3 text-white/60" />
+                    <Icon className="absolute size-6 -bottom-3 -left-3 text-white/60" />
+                    <Icon className="absolute size-6 -bottom-3 -right-3 text-white/60" />
+                    <div className="absolute -top-px left-0 right-0 flex justify-center">
+                      <Badge variant="default" className="text-[10px] px-2.5 py-0.5 rounded-t-none rounded-b-md">
+                        Recommended
+                      </Badge>
+                    </div>
+                  </>
                 )}
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-4">

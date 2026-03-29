@@ -19,13 +19,13 @@ export function CTA() {
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[radial-gradient(ellipse,oklch(0.5_0.12_280/0.06),transparent_70%)] -z-10" />
 
-      <div className="px-6 sm:px-12 md:px-16">
+      <div className="">
         <div className="mx-auto max-w-[640px] text-center">
           <AnimatedSection>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-3">Get Started</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400/60 mb-3">Get Started</p>
             <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
               Ready to give your AI agent{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/70 to-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-300">
                 full codebase awareness
               </span>
               ?

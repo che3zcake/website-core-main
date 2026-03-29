@@ -41,7 +41,7 @@
 
 .dark {
     --background: oklch(0 0 0);
-    --foreground: oklch(0.95 0 0);
+    --foreground: oklch(0.97 0 0);
     --card: oklch(0.09 0 0);
     --card-foreground: oklch(0.95 0 0);
     --popover: oklch(0.09 0 0);
@@ -51,7 +51,7 @@
     --secondary: oklch(0.14 0 0);
     --secondary-foreground: oklch(0.95 0 0);
     --muted: oklch(0.14 0 0);
-    --muted-foreground: oklch(0.55 0 0);
+    --muted-foreground: oklch(0.6 0 0);
     --accent: oklch(0.14 0 0);
     --accent-foreground: oklch(0.95 0 0);
     --destructive: oklch(0.704 0.191 22.216);
@@ -149,22 +149,22 @@ body::after {
 /* ── Premium glass card ── */
 .glass-card {
   position: relative;
-  background: oklch(0.07 0 0);
-  border: 1px solid oklch(1 0 0 / 0.10);
+  background: oklch(0.08 0 0);
+  border: 1px solid oklch(1 0 0 / 0.12);
   border-radius: var(--radius-xl);
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 .glass-card:hover {
-  border-color: oklch(1 0 0 / 0.18);
-  background: oklch(0.09 0 0);
+  border-color: oklch(1 0 0 / 0.22);
+  background: oklch(0.11 0 0);
   box-shadow: 0 8px 40px oklch(0 0 0 / 0.4);
 }
 
-/* ── Gradient border card (uses pseudo-element) ── */
+/* ── Gradient border card (featured) ── */
 .gradient-border-card {
   position: relative;
-  background: oklch(0.06 0 0);
-  border: 1px solid oklch(1 0 0 / 0.12);
+  background: oklch(0.08 0 0);
+  border: 1px solid oklch(1 0 0 / 0.15);
   border-radius: var(--radius-xl);
   overflow: hidden;
 }
@@ -179,7 +179,20 @@ body::after {
   pointer-events: none;
 }
 .gradient-border-card:hover {
-  border-color: oklch(1 0 0 / 0.18);
+  border-color: oklch(1 0 0 / 0.25);
+}
+
+/* ── Corner-decorated card ── */
+.corner-card {
+  position: relative;
+  background: transparent;
+  border: 1px solid oklch(1 0 0 / 0.2);
+  border-radius: 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.corner-card:hover {
+  border-color: oklch(1 0 0 / 0.3);
+  box-shadow: 0 0 40px oklch(1 0 0 / 0.04);
 }
 
 /* ── Featured card with top glow ── */

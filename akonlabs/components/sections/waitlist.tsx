@@ -34,7 +34,7 @@ export function Waitlist() {
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-[radial-gradient(ellipse,oklch(0.5_0.12_280/0.04),transparent_70%)] -z-10" />
 
-      <div className="px-6 sm:px-12 md:px-16">
+      <div className="">
         <div className="mx-auto max-w-[480px] text-center">
           <AnimatedSection>
             <div className="inline-flex items-center gap-2 rounded-full glass-card px-3.5 py-1.5 mb-6">

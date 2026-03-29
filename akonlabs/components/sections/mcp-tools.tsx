@@ -25,7 +25,7 @@ const tools = [
 export function McpTools() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
-      <div className="px-6 sm:px-12 md:px-16">
+      <div className="">
         <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
           <Badge variant="secondary" className="mb-4 px-3 py-1.5 border-white/10 bg-white/[0.06] text-white/70">
             7 MCP Tools

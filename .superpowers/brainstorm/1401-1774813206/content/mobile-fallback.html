@@ -1,0 +1,28 @@
+<h2>Mobile & Performance — How do we handle it?</h2>
+<p class="subtitle">The sticky Three.js canvas is GPU-heavy. What happens on phones?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Reduced particles + same journey</h3>
+      <p>Keep the sticky canvas on mobile but with 5K particles (vs 20K), no annotations, simpler transitions. Same zig-zag text layout but stacked vertically. The experience is the same, just lighter.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Static fallback on mobile</h3>
+      <p>On mobile (&lt;768px), skip the sticky canvas entirely. Show a static hero image/screenshot of the nebula, then the pipeline steps as regular scroll sections with simple fade-in animations. Full experience is desktop-only.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Mobile gets the hero only</h3>
+      <p>Mobile sees the particle planet in the hero (reduced to 5K particles, no sticky). Below that, pipeline steps render as normal cards with icons — similar to the current How It Works but with step numbers and descriptions. Desktop gets the full cinematic experience.</p>
+    </div>
+  </div>
+</div>

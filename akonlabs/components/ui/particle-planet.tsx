@@ -48,6 +48,7 @@ export const ParticlePlanet = memo(function ParticlePlanet({
     }
 
     function updateAnnotations(cam: THREE.PerspectiveCamera) {
+      if (!container) return
       const w2 = container.clientWidth * 0.5
       const h2 = container.clientHeight * 0.5
       const v = new THREE.Vector3()
