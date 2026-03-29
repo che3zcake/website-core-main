@@ -113,6 +113,17 @@ export const ParticlePlanet = memo(function ParticlePlanet({
     let camAng = 0
     let animationId: number
 
+    // ── Mouse interaction (desktop only) ──
+    let mmx = 0, mmy = 0
+    const isMobileDevice = container.clientWidth < 1024
+    function onMouseMove(e: MouseEvent) {
+      mmx = (e.clientX / window.innerWidth - 0.5) * 2
+      mmy = (e.clientY / window.innerHeight - 0.5) * 2
+    }
+    if (!isMobileDevice) {
+      document.addEventListener("mousemove", onMouseMove)
+    }
+
     let scale = 90.5, warp = 0.4, pSize = 1.15, flowCtrl = 1.2
     const CL = 6, PI2 = 6.2831853, G = 2.399963
     const NODES_PER_CL = 7, TOTAL_NODES = CL * NODES_PER_CL
@@ -138,8 +149,8 @@ export const ParticlePlanet = memo(function ParticlePlanet({
 
 
       camAng += 0.0003
-      camera.position.x = Math.sin(camAng) * 250
-      camera.position.y = Math.sin(time * 0.06) * 10
+      camera.position.x = Math.sin(camAng) * 250 + mmx * 30
+      camera.position.y = mmy * -20 + Math.sin(time * 0.06) * 10
       camera.position.z = Math.cos(camAng) * 250
       camera.lookAt(0, 0, 0)
 
@@ -296,6 +307,7 @@ export const ParticlePlanet = memo(function ParticlePlanet({
 
     return () => {
       window.removeEventListener("resize", onResize)
+      document.removeEventListener("mousemove", onMouseMove)
       cancelAnimationFrame(animationId)
       renderer.dispose()
       composer.dispose()

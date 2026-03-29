@@ -82,8 +82,8 @@ export default function Page() {
             <Hero />
           </div>
           {/* Stats card — overlapping particle area */}
-          <div className="absolute bottom-[8vh] left-[25vw] w-[550px] z-20">
-            <div className="rounded-2xl border border-white/[0.15] bg-white/[0.03] backdrop-blur-xl p-10 shadow-[0_0_60px_oklch(1_0_0/0.04)]">
+          <div className="absolute bottom-[8vh] left-[42vw] w-[620px] z-20">
+            <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-10 shadow-[0_0_60px_oklch(1_0_0/0.06)]">
               <div className="flex items-center gap-6 mb-6">
                 <span className="text-4xl font-bold text-emerald-300">20K+</span>
                 <span className="text-lg text-white/50">GitHub Stars</span>
