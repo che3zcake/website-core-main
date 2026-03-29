@@ -24,31 +24,30 @@ const tools = [
 
 export function McpTools() {
   return (
-    <section className="py-12 md:py-16 relative overflow-hidden">
-      <div className="px-10 sm:px-12">
-        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
-          <Badge variant="secondary" className="mb-4">
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      <div className="px-6 sm:px-12 md:px-16">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
+          <Badge variant="secondary" className="mb-4 px-3 py-1.5 border-white/10 bg-white/[0.06] text-white/70">
             7 MCP Tools
           </Badge>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
             What AI Agents Get
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Powerful tools that give your AI assistant deep codebase understanding.
           </p>
         </AnimatedSection>
 
-        {/* Terminal-styled container */}
         <AnimatedSection delay={100}>
-          <div className="rounded-md border border-white/[0.04] bg-[oklch(0.06_0.004_166)] overflow-hidden">
+          <div className="gradient-border-card overflow-hidden">
             {/* Terminal title bar */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
+            <div className="flex items-center gap-2 px-5 py-3.5 border-b border-white/[0.06]">
               <div className="flex gap-1.5">
-                <div className="size-2.5 rounded-full bg-red-500/70" />
-                <div className="size-2.5 rounded-full bg-yellow-500/70" />
-                <div className="size-2.5 rounded-full bg-green-500/70" />
+                <div className="size-2.5 rounded-full bg-white/10" />
+                <div className="size-2.5 rounded-full bg-white/8" />
+                <div className="size-2.5 rounded-full bg-white/6" />
               </div>
-              <span className="text-xs text-muted-foreground font-mono ml-2">MCP Tools</span>
+              <span className="text-xs text-muted-foreground font-mono ml-2">mcp-server</span>
             </div>
 
             {/* Tool rows */}
@@ -56,16 +55,18 @@ export function McpTools() {
               {tools.map((tool, index) => (
                 <div
                   key={tool.name}
-                  className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 px-4 sm:px-5 py-3 sm:py-4 transition-colors duration-150 hover:bg-white/[0.03]"
+                  className="group flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 px-5 sm:px-6 py-4 transition-all duration-200 hover:bg-white/[0.02]"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <div className="flex items-center gap-2 shrink-0">
-                    <tool.icon className="size-4 text-primary/70" />
-                    <span className="font-mono text-sm text-primary font-medium">
+                  <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex size-8 items-center justify-center rounded-lg bg-white/[0.04] group-hover:bg-white/[0.07] transition-colors">
+                      <tool.icon className="size-3.5 text-white/40 group-hover:text-white/60 transition-colors" />
+                    </div>
+                    <span className="font-mono text-sm text-foreground/80 font-medium">
                       {tool.name}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pl-6 sm:pl-0">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed pl-11 sm:pl-0">
                     {tool.description}
                   </p>
                 </div>

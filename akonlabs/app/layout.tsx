@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Sora, Geist_Mono } from "next/font/google"
 import type { Metadata } from "next"
 
 import "./globals.css"
@@ -8,7 +8,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { SmoothScroll } from "@/components/smooth-scroll"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const sora = Sora({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -30,7 +30,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn("antialiased", fontMono.variable, "font-sans", sora.variable)}
     >
       <body className="min-h-screen bg-background overflow-x-hidden">
         <ThemeProvider>
@@ -38,7 +38,7 @@ export default function RootLayout({
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm">
             Skip to main content
           </a>
-          <div className="mx-auto max-w-[1200px] border-x border-primary/20">
+          <div>
             <Header />
             <main id="main-content">{children}</main>
             <Footer />

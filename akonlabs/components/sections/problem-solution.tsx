@@ -10,7 +10,6 @@ import {
   Terminal,
   Code2,
   Braces,
-  ArrowRight,
 } from "lucide-react"
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { AnimatedBeam } from "@/components/ui/animated-beam"
@@ -25,14 +24,14 @@ const Circle = forwardRef<
       <div
         ref={ref}
         className={cn(
-          "z-10 flex size-10 sm:size-12 items-center justify-center rounded-full border border-white/[0.08] bg-card p-2 sm:p-3",
+          "z-10 flex size-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] p-2 backdrop-blur-sm sm:size-12 sm:p-3",
           className
         )}
       >
         {children}
       </div>
       {label && (
-        <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+        <span className="text-[10px] font-medium text-muted-foreground sm:text-xs">
           {label}
         </span>
       )}
@@ -53,7 +52,7 @@ function GitNexusBeamDiagram() {
 
   return (
     <div
-      className="relative flex h-[220px] sm:h-[280px] w-full items-center justify-center overflow-hidden rounded-md border border-white/[0.06] bg-card/20 dot-grid p-4 sm:p-8"
+      className="dot-grid glass-card featured-card relative flex h-[220px] w-full items-center justify-center overflow-hidden p-4 sm:h-[280px] sm:p-8"
       ref={containerRef}
     >
       <div className="flex size-full max-w-lg items-stretch justify-between">
@@ -69,8 +68,12 @@ function GitNexusBeamDiagram() {
           </Circle>
         </div>
         <div className="flex items-center justify-center">
-          <Circle ref={centerRef} className="size-12 sm:size-14 border-primary/30 bg-primary/10" label="GitNexus">
-            <Network className="size-6 text-primary" />
+          <Circle
+            ref={centerRef}
+            className="size-12 border-white/[0.15] bg-white/[0.06] sm:size-14"
+            label="GitNexus"
+          >
+            <Network className="size-6 text-foreground" />
           </Circle>
         </div>
         <div className="flex flex-col justify-between py-2">
@@ -86,12 +89,58 @@ function GitNexusBeamDiagram() {
         </div>
       </div>
 
-      <AnimatedBeam containerRef={containerRef} fromRef={codeRef1} toRef={centerRef} curvature={-40} gradientStartColor="#10b981" gradientStopColor="#059669" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
-      <AnimatedBeam containerRef={containerRef} fromRef={codeRef2} toRef={centerRef} gradientStartColor="#10b981" gradientStopColor="#059669" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
-      <AnimatedBeam containerRef={containerRef} fromRef={codeRef3} toRef={centerRef} curvature={40} gradientStartColor="#10b981" gradientStopColor="#059669" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
-      <AnimatedBeam containerRef={containerRef} fromRef={centerRef} toRef={editorRef1} curvature={-40} gradientStartColor="#34d399" gradientStopColor="#10b981" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
-      <AnimatedBeam containerRef={containerRef} fromRef={centerRef} toRef={editorRef2} gradientStartColor="#34d399" gradientStopColor="#10b981" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
-      <AnimatedBeam containerRef={containerRef} fromRef={centerRef} toRef={editorRef3} curvature={40} gradientStartColor="#34d399" gradientStopColor="#10b981" pathColor="oklch(0.696 0.17 162.48 / 0.08)" />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={codeRef1}
+        toRef={centerRef}
+        curvature={-40}
+        gradientStartColor="#7c5cbf"
+        gradientStopColor="#a78bfa"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={codeRef2}
+        toRef={centerRef}
+        gradientStartColor="#7c5cbf"
+        gradientStopColor="#a78bfa"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={codeRef3}
+        toRef={centerRef}
+        curvature={40}
+        gradientStartColor="#7c5cbf"
+        gradientStopColor="#a78bfa"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={editorRef1}
+        curvature={-40}
+        gradientStartColor="#a78bfa"
+        gradientStopColor="#c4b5fd"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={editorRef2}
+        gradientStartColor="#a78bfa"
+        gradientStopColor="#c4b5fd"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={editorRef3}
+        curvature={40}
+        gradientStartColor="#a78bfa"
+        gradientStopColor="#c4b5fd"
+        pathColor="oklch(1 0 0 / 0.04)"
+      />
     </div>
   )
 }
@@ -113,49 +162,50 @@ const comparisons = [
 
 export function ProblemSolution() {
   return (
-    <section className="py-16 md:py-20">
-      <div className="px-10 sm:px-12">
-        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
-          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-4xl mb-3">
+    <section className="py-20 md:py-28">
+      <div className="px-6 sm:px-12 md:px-16">
+        <AnimatedSection className="mx-auto mb-12 max-w-[640px] text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            The Problem
+          </p>
+          <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
             AI coding tools are powerful.{" "}
-            <span className="text-muted-foreground">But they&apos;re flying blind.</span>
+            <span className="text-muted-foreground">
+              But they&apos;re flying blind.
+            </span>
           </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            They edit code without knowing what depends on it. GitNexus gives them
-            the full picture.
+          <p className="mx-auto max-w-xl text-sm leading-relaxed text-muted-foreground">
+            They edit code without knowing what depends on it. GitNexus gives
+            them the full picture.
           </p>
         </AnimatedSection>
 
-        {/* Beam diagram — full width, centered */}
-        <AnimatedSection delay={100} className="mx-auto mb-8">
+        <AnimatedSection delay={100} className="mx-auto mb-10">
           <GitNexusBeamDiagram />
-          <p className="text-center text-xs text-muted-foreground/60 mt-2">
-            Code → Knowledge Graph → AI Editors
-          </p>
         </AnimatedSection>
 
-        {/* Comparison rows — centered, consistent width */}
         <div className="mx-auto">
           <AnimatedSection delay={200}>
-            <div className="grid md:grid-cols-3 gap-3 mb-3">
+            <div className="mb-4 grid gap-4 md:grid-cols-3">
               {comparisons.map((item, i) => (
                 <div
                   key={i}
-                  className="rounded-md border border-white/[0.06] bg-card/20 p-4 transition-all duration-200 hover:border-white/[0.12] hover:bg-card/40"
+                  className="glass-card card-hover group p-5 transition-all duration-300"
                 >
-                  <div className="flex items-start gap-2.5 mb-3">
-                    <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-destructive/10 mt-0.5">
-                      <XCircle className="size-3 text-destructive/70" />
+                  <div className="mb-4 flex items-start gap-3">
+                    <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-500/10 transition-colors duration-300 group-hover:bg-red-500/15">
+                      <XCircle className="size-3.5 text-red-400/70" />
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-through decoration-destructive/30">
+                    <p className="text-sm leading-relaxed text-muted-foreground line-through decoration-red-400/20">
                       {item.without}
                     </p>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/10 mt-0.5">
-                      <CheckCircle className="size-3 text-primary/70" />
+                  <div className="section-divider mb-4" />
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 transition-colors duration-300 group-hover:bg-emerald-500/15">
+                      <CheckCircle className="size-3.5 text-emerald-400/70" />
                     </div>
-                    <p className="text-sm text-foreground/90 leading-relaxed">
+                    <p className="text-sm leading-relaxed text-foreground/90">
                       {item.with}
                     </p>
                   </div>
@@ -164,30 +214,48 @@ export function ProblemSolution() {
             </div>
           </AnimatedSection>
 
-          {/* Bottom row — impact stat + value props, same grid width */}
           <AnimatedSection delay={300}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {/* Impact stat — spans 1 col */}
-              <div className="rounded-md border border-primary/15 bg-primary/[0.04] p-4 flex flex-col items-center justify-center text-center">
-                <span className="text-2xl font-bold text-primary">100%</span>
-                <p className="text-xs text-primary/70 font-medium">blast radius known</p>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div className="gradient-border-card glow-purple flex flex-col items-center justify-center p-5 text-center transition-all duration-300">
+                <span className="text-2xl font-bold text-foreground">
+                  100%
+                </span>
+                <p className="mt-1 text-xs font-medium text-muted-foreground">
+                  blast radius known
+                </p>
               </div>
-
-              {/* Three value props */}
               {[
-                { stat: "1", unit: "tool call", desc: "Complete context. No multi-query chains." },
-                { stat: "0", unit: "data sent", desc: "100% local. Nothing leaves your machine." },
-                { stat: "Any", unit: "LLM works", desc: "Small models get full architectural clarity." },
+                {
+                  stat: "1",
+                  unit: "tool call",
+                  desc: "Complete context. No multi-query chains.",
+                },
+                {
+                  stat: "0",
+                  unit: "data sent",
+                  desc: "100% local. Nothing leaves your machine.",
+                },
+                {
+                  stat: "Any",
+                  unit: "LLM works",
+                  desc: "Small models get full architectural clarity.",
+                },
               ].map((item) => (
                 <div
                   key={item.unit}
-                  className="rounded-md border border-white/[0.06] bg-card/20 p-4 text-center flex flex-col justify-center hover:border-white/[0.12]"
+                  className="glass-card card-hover flex flex-col justify-center p-5 text-center transition-all duration-300"
                 >
-                  <div className="flex items-baseline justify-center gap-1 mb-0.5">
-                    <span className="text-lg font-bold text-foreground">{item.stat}</span>
-                    <span className="text-xs font-medium text-muted-foreground">{item.unit}</span>
+                  <div className="mb-1 flex items-baseline justify-center gap-1">
+                    <span className="text-lg font-bold text-foreground">
+                      {item.stat}
+                    </span>
+                    <span className="text-xs font-medium text-muted-foreground">
+                      {item.unit}
+                    </span>
                   </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="text-xs leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>

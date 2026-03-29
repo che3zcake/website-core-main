@@ -35,7 +35,8 @@ const features = [
   {
     icon: Search,
     title: "Hybrid Search",
-    description: "BM25 + semantic search combined. Faster, more accurate code discovery.",
+    description:
+      "BM25 + semantic search combined. Faster, more accurate code discovery.",
     className: "md:col-span-1",
     featured: false,
   },
@@ -50,7 +51,8 @@ const features = [
   {
     icon: Shield,
     title: "100% Local / Private",
-    description: "No code sent to any server. Enterprise-safe, no data leakage.",
+    description:
+      "No code sent to any server. Enterprise-safe, no data leakage.",
     className: "md:col-span-1",
     featured: false,
   },
@@ -65,7 +67,8 @@ const features = [
   {
     icon: GitCompare,
     title: "Git-Diff Impact",
-    description: "Maps changed lines to affected processes. Pre-commit risk assessment.",
+    description:
+      "Maps changed lines to affected processes. Pre-commit risk assessment.",
     className: "md:col-span-1",
     featured: false,
   },
@@ -84,21 +87,25 @@ export function Features() {
   const isInView = useInView(gridRef, { once: true, margin: "-50px" })
 
   return (
-    <section id="features" className="py-16 md:py-20 relative">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/[0.015] to-transparent" />
-
-      <div className="px-10 sm:px-12">
-        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
-            Key Features
+    <section id="features" className="relative py-20 md:py-28">
+      <div className="px-6 sm:px-12 md:px-16">
+        <AnimatedSection className="mx-auto mb-12 max-w-[640px] text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Capabilities
+          </p>
+          <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
+            Everything your AI agent needs
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
-            Everything you need to give your AI coding assistant full codebase
-            awareness.
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Full codebase awareness through a comprehensive set of tools and
+            features.
           </p>
         </AnimatedSection>
 
-        <div ref={gridRef} className="grid grid-cols-2 gap-3 md:grid-cols-4 auto-rows-[minmax(120px,auto)] sm:auto-rows-[minmax(140px,auto)]">
+        <div
+          ref={gridRef}
+          className="grid auto-rows-[minmax(140px,auto)] grid-cols-2 gap-4 sm:auto-rows-[minmax(160px,auto)] md:grid-cols-4"
+        >
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -113,56 +120,76 @@ export function Features() {
             >
               <div
                 className={cn(
-                  "card-hover group relative h-full overflow-hidden rounded-md border p-4 sm:p-6 transition-all duration-200",
+                  "group relative h-full overflow-hidden p-5 transition-all duration-300 sm:p-6",
                   feature.featured
-                    ? "border-primary/15 bg-primary/[0.04] hover:border-primary/30"
-                    : "border-white/[0.06] bg-card/20 hover:border-white/[0.12] hover:bg-card/40",
+                    ? "gradient-border-card featured-card"
+                    : "glass-card card-hover",
                   feature.featured && "flex flex-col justify-between"
                 )}
               >
                 <div className="relative z-10">
                   <div
                     className={cn(
-                      "mb-4 flex items-center justify-center rounded-md bg-primary/10 transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-105",
-                      feature.featured ? "size-11 sm:size-14" : "size-9 sm:size-11"
+                      "mb-4 flex items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105",
+                      feature.featured
+                        ? "size-12 bg-white/[0.06] sm:size-14"
+                        : "size-10 bg-white/[0.04] group-hover:bg-white/[0.06] sm:size-12"
                     )}
                   >
                     <feature.icon
                       className={cn(
-                        "text-primary",
-                        feature.featured ? "size-5 sm:size-7" : "size-4 sm:size-5"
+                        "text-white/60 transition-colors group-hover:text-white/80",
+                        feature.featured
+                          ? "size-5 sm:size-7"
+                          : "size-4 sm:size-5"
                       )}
                     />
                   </div>
                   <h3
                     className={cn(
-                      "font-semibold mb-2",
-                      feature.featured ? "text-base sm:text-xl" : "text-sm sm:text-base"
+                      "mb-2 font-semibold",
+                      feature.featured
+                        ? "text-base sm:text-xl"
+                        : "text-sm sm:text-base"
                     )}
                   >
                     {feature.title}
                   </h3>
-                  <p
-                    className={cn(
-                      "text-muted-foreground leading-relaxed",
-                      feature.featured ? "text-sm" : "text-sm"
-                    )}
-                  >
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
 
-                {/* Featured card — terminal code block */}
                 {feature.featured && (
-                  <div className="relative z-10 mt-4 sm:mt-6 rounded-lg border border-white/[0.06] bg-background/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs overflow-x-auto">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-primary">$</span>
-                      <span className="text-foreground/80">gitnexus context --name UserService</span>
+                  <div className="relative z-10 mt-4 overflow-x-auto rounded-lg border border-white/[0.06] bg-black/30 p-3 font-mono text-[10px] sm:mt-6 sm:p-4 sm:text-xs">
+                    <div className="mb-1 flex items-center gap-2">
+                      <span className="text-white/40">$</span>
+                      <span className="text-white/70">
+                        gitnexus context --name UserService
+                      </span>
                     </div>
-                    <div className="text-muted-foreground mt-2 space-y-0.5">
-                      <div><span className="text-primary/60">&#x251C;</span> incoming: <span className="text-foreground/70">8 callers, 3 clusters</span></div>
-                      <div><span className="text-primary/60">&#x251C;</span> outgoing: <span className="text-foreground/70">4 calls, 2 imports</span></div>
-                      <div><span className="text-primary/60">&#x2514;</span> processes: <span className="text-foreground/70">LoginFlow, RegistrationFlow</span></div>
+                    <div className="mt-2 space-y-0.5 text-muted-foreground">
+                      <div>
+                        <span className="text-white/20">&#x251C;</span>{" "}
+                        incoming:{" "}
+                        <span className="text-white/60">
+                          8 callers, 3 clusters
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-white/20">&#x251C;</span>{" "}
+                        outgoing:{" "}
+                        <span className="text-white/60">
+                          4 calls, 2 imports
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-white/20">&#x2514;</span>{" "}
+                        processes:{" "}
+                        <span className="text-white/60">
+                          LoginFlow, RegistrationFlow
+                        </span>
+                      </div>
                     </div>
                   </div>
                 )}

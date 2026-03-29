@@ -13,7 +13,7 @@ import {
   Server,
   Terminal,
   Globe,
-  ChevronDown,
+  ArrowDown,
 } from "lucide-react"
 
 const steps = [
@@ -34,37 +34,34 @@ const outputs = [
 
 export function HowItWorks() {
   return (
-    <section className="py-12 md:py-16 relative">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
-
-      <div className="px-10 sm:px-12">
-        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
-          <Badge variant="secondary" className="mb-4">
+    <section className="py-20 md:py-28 relative">
+      <div className="px-6 sm:px-12 md:px-16">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
+          <Badge variant="secondary" className="mb-4 px-3 py-1.5 border-white/10 bg-white/[0.06] text-white/70">
             6-Step Pipeline
           </Badge>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
             How It Works
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             From source code to queryable knowledge graph in 6 steps.
           </p>
         </AnimatedSection>
 
-        {/* Pipeline steps with connectors */}
         <div className="mb-10">
-          <div className="grid gap-2 sm:gap-3 grid-cols-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             {steps.map((step, index) => (
               <AnimatedSection
                 key={step.number}
                 delay={Math.min(index * 50, 250)}
                 direction="up"
               >
-                <div className="card-hover group relative h-full overflow-hidden rounded-md border border-white/[0.06] bg-card/20 p-4 hover:border-white/[0.12] transition-all duration-200 hover:border-white/[0.12] hover:bg-card/60">
+                <div className="glass-card card-hover group h-full p-4 sm:p-5">
                   <div className="relative z-10 text-center">
-                    <div className="mb-3 mx-auto flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-sm ring-2 ring-primary/20 ring-offset-2 ring-offset-background transition-transform duration-200 group-hover:scale-105">
+                    <div className="mb-3 mx-auto flex size-10 items-center justify-center rounded-full bg-white/[0.06] font-bold text-sm text-white/80 ring-1 ring-white/10 transition-all duration-300 group-hover:ring-white/20 group-hover:bg-white/[0.1]">
                       {step.number}
                     </div>
-                    <step.icon className="size-4 text-primary mx-auto mb-2" />
+                    <step.icon className="size-4 text-white/40 mx-auto mb-2 group-hover:text-white/60 transition-colors" />
                     <h3 className="font-semibold text-sm mb-0.5">
                       {step.title}
                     </h3>
@@ -78,26 +75,26 @@ export function HowItWorks() {
           </div>
         </div>
 
-        {/* Chevron down */}
         <AnimatedSection delay={300} direction="up">
           <div className="flex justify-center mb-10">
-            <div className="flex size-8 items-center justify-center rounded-full bg-primary/10">
-              <ChevronDown className="size-4 text-primary/50" />
+            <div className="flex size-9 items-center justify-center rounded-full glass-card">
+              <ArrowDown className="size-4 text-white/30" />
             </div>
           </div>
         </AnimatedSection>
 
-        {/* Outputs */}
-        <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
           {outputs.map((output, index) => (
             <AnimatedSection
               key={output.title}
               delay={Math.min(350 + index * 50, 500)}
               direction="up"
             >
-              <div className="card-hover group relative h-full overflow-hidden rounded-md border border-primary/15 bg-primary/[0.04] p-4 transition-all duration-200 hover:border-primary/30">
+              <div className="gradient-border-card card-hover group h-full p-5">
                 <div className="relative z-10 flex items-center gap-3">
-                  <output.icon className="size-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-105" />
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-white/[0.06] shrink-0 transition-all duration-300 group-hover:bg-white/[0.1]">
+                    <output.icon className="size-4.5 text-white/50 group-hover:text-white/70 transition-colors" />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-sm">{output.title}</h3>
                     <p className="text-xs text-muted-foreground">{output.description}</p>

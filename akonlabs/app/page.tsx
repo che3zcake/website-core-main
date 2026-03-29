@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero"
+import { StatsBar } from "@/components/sections/stats-bar"
 import { ProblemSolution } from "@/components/sections/problem-solution"
 import { Features } from "@/components/sections/features"
 import { HowItWorks } from "@/components/sections/how-it-works"
@@ -8,37 +9,14 @@ import { CTA } from "@/components/sections/cta"
 import { Waitlist } from "@/components/sections/waitlist"
 
 function Divider() {
-  return (
-    <div className="relative">
-      <hr className="border-primary/20" />
-      <div
-        className="h-4 opacity-[0.07]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            oklch(0.696 0.17 162.48) 0px,
-            oklch(0.696 0.17 162.48) 1px,
-            transparent 1px,
-            transparent 8px
-          ),
-          repeating-linear-gradient(
-            -45deg,
-            oklch(0.696 0.17 162.48) 0px,
-            oklch(0.696 0.17 162.48) 1px,
-            transparent 1px,
-            transparent 8px
-          )`,
-        }}
-      />
-      <hr className="border-primary/20" />
-    </div>
-  )
+  return <div className="section-divider mx-6 sm:mx-12 md:mx-16" />
 }
 
 export default function Page() {
   return (
     <>
       <Hero />
+      <StatsBar />
       <Divider />
       <ProblemSolution />
       <Divider />

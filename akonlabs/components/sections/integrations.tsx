@@ -47,18 +47,19 @@ const languages = [
 
 export function Integrations() {
   return (
-    <section id="integrations" className="py-12 md:py-16">
-      <div className="px-10 sm:px-12">
-        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-10">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+    <section id="integrations" className="py-20 md:py-28">
+      <div className="px-6 sm:px-12 md:px-16">
+        <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-3">Integrations</p>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
             Supported Editors
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Works with your favorite AI-powered code editors.
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-y-3 gap-x-6 grid-cols-1 sm:grid-cols-2">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
           {editors.map((editor, index) => (
             <AnimatedSection
               key={editor.name}
@@ -67,10 +68,10 @@ export function Integrations() {
             >
               <div
                 className={cn(
-                  "card-hover group relative h-full overflow-hidden rounded-md border backdrop-blur p-6 transition-all duration-200",
+                  "group relative h-full overflow-hidden p-6 transition-all duration-300",
                   editor.highlight
-                    ? "border-primary/15 bg-primary/[0.03] hover:border-primary/30"
-                    : "border-white/[0.06] bg-card/20 hover:border-white/[0.12] hover:bg-card/30"
+                    ? "gradient-border-card featured-card"
+                    : "glass-card"
                 )}
               >
                 {editor.highlight && (
@@ -84,22 +85,24 @@ export function Integrations() {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className={cn(
-                        "flex size-10 items-center justify-center rounded-lg transition-all duration-200 group-hover:scale-105",
-                        editor.highlight ? "bg-primary/20" : "bg-primary/10 group-hover:bg-primary/15"
+                        "flex size-11 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105",
+                        editor.highlight ? "bg-white/[0.08]" : "bg-white/[0.04] group-hover:bg-white/[0.07]"
                       )}
                     >
-                      <editor.icon className="size-5 text-primary" />
+                      <editor.icon className="size-5 text-white/50 group-hover:text-white/70 transition-colors" />
                     </div>
                     <div>
                       <h3 className="font-semibold">{editor.name}</h3>
                       <span className="text-xs text-muted-foreground">{editor.level}</span>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">{editor.description}</p>
+                  <p className="text-sm text-muted-foreground mb-5">{editor.description}</p>
                   <div className="flex flex-wrap gap-3">
                     {editor.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                        <Check className="size-3 text-primary" />
+                        <div className="flex size-4 items-center justify-center rounded-full bg-emerald-500/10">
+                          <Check className="size-2.5 text-emerald-400/70" />
+                        </div>
                         {feature}
                       </div>
                     ))}
@@ -110,9 +113,8 @@ export function Integrations() {
           ))}
         </div>
 
-        {/* Languages — merged as a sub-section */}
         <AnimatedSection delay={400} className="mt-16">
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-5">
             <p className="text-sm font-medium text-muted-foreground">
               13 languages supported
             </p>
@@ -120,7 +122,7 @@ export function Integrations() {
               {languages.map((lang) => (
                 <span
                   key={lang}
-                  className="px-3 py-1.5 text-xs font-medium text-muted-foreground rounded-md bg-white/[0.04] border border-white/[0.06]"
+                  className="glass-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
                 >
                   {lang}
                 </span>
