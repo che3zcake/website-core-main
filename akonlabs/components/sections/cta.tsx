@@ -9,7 +9,7 @@ export function CTA() {
   const [copied, setCopied] = useState(false)
 
   const copyCommand = useCallback(() => {
-    navigator.clipboard.writeText("npx gitnexus analyze\nnpx gitnexus setup")
+    navigator.clipboard.writeText("npm i -g gitnexushub\ngnx connect <your-key> --editor claude-code")
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }, [])
@@ -47,15 +47,15 @@ export function CTA() {
               <div className="font-mono text-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-white/30">$</span>
-                  <span className="text-white/70">npx gitnexus analyze</span>
+                  <span className="text-white/70">npm i -g gitnexushub</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-white/30">$</span>
-                  <span className="text-white/70">npx gitnexus setup</span>
+                  <span className="text-white/70">gnx connect &lt;your-key&gt; --editor claude-code</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <span className="text-emerald-400/50">&#10003;</span>
-                  <span>Done. Your AI agent now has full codebase awareness</span>
+                  <span>Connected. Your AI agent now has full codebase awareness.</span>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function CTA() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-xs sm:text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5">
                 <Star className="size-3.5 text-white/20" />
-                <span>Trusted by 19,000+ developers</span>
+                <span>19,500+ GitHub stars</span>
               </div>
               <span className="hidden sm:inline text-white/10">|</span>
               <span>Free for non-commercial use</span>

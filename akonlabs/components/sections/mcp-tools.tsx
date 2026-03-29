@@ -13,13 +13,13 @@ import {
 } from "lucide-react"
 
 const tools = [
-  { name: "query", icon: Search, description: "Search your entire codebase with full architectural context" },
-  { name: "context", icon: Eye, description: "Get a 360-degree view of any symbol. Who calls it, what it calls, which flows it belongs to" },
-  { name: "impact", icon: Target, description: "See the full blast radius before changing anything. Every affected function, file, and process" },
-  { name: "detect_changes", icon: GitCompare, description: "Understand how your recent git changes ripple through the codebase" },
-  { name: "rename", icon: PenLine, description: "Safely rename symbols across multiple files with full dependency awareness" },
-  { name: "list_repos", icon: List, description: "Discover all indexed repositories available to your AI agent" },
-  { name: "cypher", icon: Database, description: "Run raw graph queries for advanced exploration and custom analysis" },
+  { name: "query", icon: Search, description: "Search across all indexed repos with full architectural context — BM25 + semantic hybrid search" },
+  { name: "context", icon: Eye, description: "360-degree view of any symbol across repos. Callers, callees, execution flows, cluster membership" },
+  { name: "impact", icon: Target, description: "Cross-repo blast radius, risk-scored by depth. Know what breaks before you merge" },
+  { name: "detect_changes", icon: GitCompare, description: "Map git diffs to affected execution flows. Auto-analyzed on every PR via Hub webhooks" },
+  { name: "rename", icon: PenLine, description: "Graph-aware rename across repos with full dependency tracking" },
+  { name: "list_repos", icon: List, description: "Discover all indexed repositories and cross-repo groups available on your Hub" },
+  { name: "cypher", icon: Database, description: "Raw Cypher queries against the knowledge graph for advanced exploration" },
 ]
 
 export function McpTools() {

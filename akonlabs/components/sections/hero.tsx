@@ -10,7 +10,7 @@ export function Hero() {
   const [copied, setCopied] = useState(false)
 
   const copyCommand = useCallback(() => {
-    navigator.clipboard.writeText("npx gitnexus analyze")
+    navigator.clipboard.writeText("gnx connect --editor claude-code")
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }, [])
@@ -52,9 +52,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8 max-w-md text-sm text-white/50 sm:text-[15px] leading-relaxed"
         >
-          Indexes any codebase into a knowledge graph &mdash; every dependency,
-          call chain, cluster, and execution flow &mdash; then exposes it
-          through smart tools so AI agents never miss code.
+          The knowledge graph that makes AI agents actually understand your
+          codebase. Remote indexing, PR blast radius, cross-repo impact
+          analysis &mdash; all through one MCP connection.
         </motion.p>
 
         <motion.div
@@ -75,7 +75,7 @@ export function Hero() {
             className="group flex items-center gap-3 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-2.5 font-mono text-xs sm:text-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 active:scale-[0.98] w-full sm:w-auto"
           >
             <span className="text-white/40">$</span>
-            <span className="text-white/60">npx gitnexus analyze</span>
+            <span className="text-white/60">gnx connect --editor claude-code</span>
             {copied ? (
               <Check className="size-3.5 text-white" />
             ) : (

@@ -18,7 +18,7 @@ function DiscordIcon({ className }: { className?: string }) {
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Open Source", href: "/opensource" },
+  { name: "Open Source", href: "/#open-source" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Gallery", href: "/gallery" },
 ]

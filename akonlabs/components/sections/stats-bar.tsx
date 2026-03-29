@@ -4,10 +4,10 @@ import { AnimatedSection } from "@/components/ui/animated-section"
 import { Star, Globe, Terminal, Shield } from "lucide-react"
 
 const stats = [
-  { icon: Star, value: "19K+", label: "GitHub Stars" },
-  { icon: Globe, value: "13", label: "Languages" },
+  { icon: Star, value: "~85%", label: "Token Savings" },
+  { icon: Globe, value: "15", label: "Languages" },
   { icon: Terminal, value: "7", label: "MCP Tools" },
-  { icon: Shield, value: "100%", label: "Local & Private" },
+  { icon: Shield, value: "0", label: "Data Sent Externally" },
 ]
 
 export function StatsBar() {

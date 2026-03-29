@@ -10,6 +10,7 @@ import { Integrations } from "@/components/sections/integrations"
 import { McpTools } from "@/components/sections/mcp-tools"
 import { CTA } from "@/components/sections/cta"
 import { Waitlist } from "@/components/sections/waitlist"
+import { OpenSource } from "@/components/sections/open-source"
 import { ParticlePlanet } from "@/components/ui/particle-planet"
 import { CornerCard } from "@/components/ui/corner-card"
 
@@ -41,6 +42,7 @@ function MobileLayout() {
         <Panel><HowItWorks /></Panel>
         <Panel><McpTools /></Panel>
         <Panel><Integrations /></Panel>
+        <Panel><OpenSource /></Panel>
         <Panel><CTA /></Panel>
         <Panel><Waitlist /></Panel>
       </div>
@@ -94,6 +96,8 @@ export default function Page() {
           <Panel><McpTools /></Panel>
           <Divider />
           <Panel><Integrations /></Panel>
+          <Divider />
+          <Panel><OpenSource /></Panel>
           <Divider />
           <Panel><CTA /></Panel>
           <Divider />

@@ -3,33 +3,28 @@
 import { AnimatedSection } from "@/components/ui/animated-section"
 import { Badge } from "@/components/ui/badge"
 import {
-  FolderTree,
-  Code2,
-  GitBranch,
-  Network,
-  Route,
-  Search,
-  Database,
-  Server,
+  Plug,
+  Cloud,
+  GitPullRequest,
+  Zap,
   Terminal,
   Globe,
+  Server,
   ArrowDown,
 } from "lucide-react"
 
 const steps = [
-  { number: "1", title: "Structure", description: "File Tree Walk", icon: FolderTree },
-  { number: "2", title: "Parsing", description: "Tree-sitter ASTs", icon: Code2 },
-  { number: "3", title: "Resolution", description: "Imports & Call Chains", icon: GitBranch },
-  { number: "4", title: "Clustering", description: "Functional Communities", icon: Network },
-  { number: "5", title: "Processes", description: "Execution Flow Tracing", icon: Route },
-  { number: "6", title: "Search", description: "BM25 + Semantic", icon: Search },
+  { number: "1", title: "Connect", description: "One CLI command", icon: Plug },
+  { number: "2", title: "Index", description: "Remote, zero setup", icon: Cloud },
+  { number: "3", title: "Auto-Reindex", description: "On every push", icon: Zap },
+  { number: "4", title: "PR Blast Radius", description: "Before you merge", icon: GitPullRequest },
 ]
 
 const outputs = [
-  { title: "KuzuDB", description: "Local knowledge graph", icon: Database },
-  { title: "MCP Server", description: "AI agents query it", icon: Server },
+  { title: "MCP Server", description: "AI agents query the graph", icon: Server },
+  { title: "PR Reviews", description: "Automated blast radius", icon: GitPullRequest },
   { title: "CLI", description: "Developers query it", icon: Terminal },
-  { title: "Web UI", description: "Browser-based viewer", icon: Globe },
+  { title: "Web UI", description: "Browser-based explorer", icon: Globe },
 ]
 
 export function HowItWorks() {
@@ -38,18 +33,18 @@ export function HowItWorks() {
       <div className="">
         <AnimatedSection className="mx-auto max-w-[640px] text-center mb-12">
           <Badge variant="secondary" className="mb-4 px-3 py-1.5 border-white/10 bg-white/[0.06] text-white/70">
-            6-Step Pipeline
+            GitNexus Hub
           </Badge>
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem] mb-4 leading-tight">
             How It Works
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            From source code to queryable knowledge graph in 6 steps.
+            Connect once. We handle the rest — remote indexing, auto-reindex, PR analysis.
           </p>
         </AnimatedSection>
 
         <div className="mb-10">
-          <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <AnimatedSection
                 key={step.number}

@@ -339,21 +339,23 @@ function MultiRepoViz() {
   )
 }
 
-// ── 13 Languages Animation ─────────────────────────────────────────────
+// ── 15 Languages Animation ─────────────────────────────────────────────
 function LanguagesViz() {
   const [activeLang, setActiveLang] = useState(0)
   const languages = [
     "TypeScript",
+    "JavaScript",
     "Python",
-    "Rust",
-    "Go",
     "Java",
+    "Kotlin",
     "C#",
+    "Go",
+    "Rust",
+    "PHP",
     "Ruby",
     "Swift",
-    "Kotlin",
+    "C",
     "C++",
-    "PHP",
     "Scala",
     "Elixir",
   ]
@@ -394,46 +396,50 @@ const cards = [
   {
     title: "Knowledge Graph",
     description:
-      "Maps every function, class, import, and call chain into a traversable graph. AI agents see your full architecture.",
+      "A deterministic digital brain for your codebase. Lossless, grounded in AST — zero hallucination rate. Every function, class, import, and call chain mapped across repos.",
     colSpan: "md:col-span-2",
     rowSpan: "md:row-span-2",
     featured: true,
     viz: KnowledgeGraphViz,
   },
   {
-    title: "Impact Analysis",
-    description: "Blast radius of any change, before it ships.",
+    title: "~85% Token Savings",
+    description:
+      "Graph-aware context sends ~2K tokens instead of 15K raw file dumps per query. Your AI agents work faster with less noise.",
     colSpan: "md:col-span-2",
     rowSpan: "",
     featured: false,
     viz: ImpactAnalysisViz,
   },
   {
-    title: "Hybrid Search",
-    description: "BM25 + semantic search combined. Faster, more accurate.",
+    title: "Cross-Repo Impact",
+    description:
+      "What breaks if I change X? — answered across all repos, risk-scored by depth. See blast radius before every PR merge.",
     colSpan: "md:col-span-2",
     rowSpan: "md:row-span-2",
     featured: false,
     viz: HybridSearchViz,
   },
   {
-    title: "100% Local",
-    description: "No code leaves your machine. Enterprise-safe.",
+    title: "Security Scanning",
+    description:
+      "Source-sink taint analysis across repos. No separate SAST vendor needed. Built into the graph.",
     colSpan: "md:col-span-2",
     rowSpan: "",
     featured: false,
     viz: LocalPrivacyViz,
   },
   {
-    title: "Multi-Repo",
-    description: "Index and serve multiple codebases simultaneously.",
+    title: "Auto-Generated Docs",
+    description:
+      "Living wiki, architecture docs, and agent rules that stay in sync with your code. Never manually write docs again.",
     colSpan: "md:col-span-3",
     rowSpan: "",
     featured: false,
     viz: MultiRepoViz,
   },
   {
-    title: "13 Languages",
+    title: "15 Languages, One Graph",
     description: "First-class support across your entire stack.",
     colSpan: "md:col-span-3",
     rowSpan: "",
@@ -452,14 +458,14 @@ export function Features() {
       <div>
         <AnimatedSection className="mx-auto mb-12 max-w-[640px] text-center">
           <p className="mb-3 text-xs uppercase tracking-[0.2em] text-emerald-400/70">
-            Capabilities
+            Enterprise Capabilities
           </p>
           <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]">
             Everything your AI agent needs
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Full codebase awareness through a comprehensive set of tools and
-            features.
+            Enterprise-grade codebase intelligence through a comprehensive set
+            of tools and features.
           </p>
         </AnimatedSection>
 
